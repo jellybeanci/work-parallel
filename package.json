@@ -1,0 +1,28 @@
+{
+  "name": "work-parallel",
+  "version": "0.0.1",
+  "description": "Node.js CPU intensive non-blocking async worker-thread wrapper.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && node js/demo/main.js",
+    "build": "date +\"%T\" && echo \"Cleaning...\" && rm -rf ./js && echo \"Compiling...\" && tsc && echo \"Done!\" && date +\"%T\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jellybeanci/work-parallel.git"
+  },
+  "keywords": [
+    "nodejs",
+    "worker-thread",
+    "parallel",
+    "cpu-intensive-workload"
+  ],
+  "author": "Goksel KUCUKSAHIN <gokselkucuksahin@gmail.com> (https://github.com/GokselKUCUKSAHIN)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jellybeanci/work-parallel/issues"
+  },
+  "homepage": "https://github.com/jellybeanci/work-parallel#readme"
+}
