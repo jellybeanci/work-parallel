@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/jellybeanci/work-parallel/issues"
   },
-  "homepage": "https://github.com/jellybeanci/work-parallel#readme"
+  "homepage": "https://github.com/jellybeanci/work-parallel#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.15"
+  }
 }
