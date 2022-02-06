@@ -1,7 +1,13 @@
-const {parentPort} = require("worker_threads");
+import {parentPort} from "worker_threads";
+import {deserializeFunction} from "./deserialize-function";
 
-parentPort.on("message", (callback: Function, ...args: any[]) => {
-  let value = callback(...args);
-  if (!Array.isArray(value)) value = [value];
-  parentPort.postMessage([...value])
+
+parentPort.on("message", ([callbackString, arg]) => {
+  const value = deserializeFunction(callbackString)(arg);
+  //if (!Array.isArray(value)) value = [value];
+  parentPort.postMessage(value);
 });
+
+// setTimeout(_ => {
+//   throw Error("Worker Thread Throw Error");
+// }, 3000);

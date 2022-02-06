@@ -6,8 +6,9 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run build && node js/demo/main.js",
-    "build": "date +\"%T\" && echo \"Cleaning...\" && rm -rf ./js && echo \"Compiling...\" && tsc && echo \"Done!\" && date +\"%T\""
+    "start": "node js/index.js",
+    "build": "date +\"%T\" && echo \"Cleaning...\" && rm -rf ./js && echo \"Compiling...\" && tsc && echo \"Done!\" && date +\"%T\"",
+    "compile": "npm run build && npm run start"
   },
   "repository": {
     "type": "git",
@@ -27,5 +28,8 @@
   "homepage": "https://github.com/jellybeanci/work-parallel#readme",
   "devDependencies": {
     "@types/node": "^17.0.15"
+  },
+  "dependencies": {
+    "@jellybeanci/sleep": "^0.0.1"
   }
 }
