@@ -1,11 +1,14 @@
 import {parentPort} from "worker_threads";
-import {deserializeFunction} from "./deserialize-function";
+import {getLenghtOfMap, getWork} from "./work";
 
+parentPort.on("message", ([callbackId, arg]) => {
+  // const value = deserializeFunction(callbackString)(arg);
 
-parentPort.on("message", ([callbackString, arg]) => {
-  const value = deserializeFunction(callbackString)(arg);
+  const value = getWork("solve");
+  console.log("getwork", value, getLenghtOfMap());
+
   //if (!Array.isArray(value)) value = [value];
-  parentPort.postMessage(value);
+  parentPort.postMessage(5);
 });
 
 // setTimeout(_ => {
