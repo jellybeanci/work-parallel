@@ -1,16 +1,7 @@
 import {parentPort} from "worker_threads";
-import {getLenghtOfMap, getWork} from "./work";
+import {getWork} from "./work";
 
 parentPort.on("message", ([callbackId, arg]) => {
-  // const value = deserializeFunction(callbackString)(arg);
-
-  const value = getWork("solve");
-  console.log("getwork", value, getLenghtOfMap());
-
-  //if (!Array.isArray(value)) value = [value];
-  parentPort.postMessage(5);
+  const value = getWork(callbackId)(arg); // :( Not working as expected...
+  parentPort.postMessage(value);
 });
-
-// setTimeout(_ => {
-//   throw Error("Worker Thread Throw Error");
-// }, 3000);

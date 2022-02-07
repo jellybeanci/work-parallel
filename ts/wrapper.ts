@@ -1,5 +1,4 @@
 import {join} from "path";
-import {serializeFunction} from "./serialize-function";
 import {Worker} from "worker_threads";
 
 const taskDir = join(__dirname, "worker.js");
