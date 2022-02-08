@@ -11,7 +11,7 @@ export abstract class WorkParallel {
     return new Promise((resolve, reject) => {
       worker.postMessage(args); // change to plain args and test!
       worker.on('message', resolve);
-      worker.on('messageerror', reject); // ?? test here
+      worker.on('error', reject); // ?? test here
     });
   }
 
